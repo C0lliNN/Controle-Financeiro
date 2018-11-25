@@ -1,0 +1,74 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #E6E6E6;
+}
+
+#principal{
+	width: 800px;
+	height: 600px;
+	margin: auto;
+	background: white;
+	padding: 15px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,.4);
+}
+
+nav{
+	display: flex;
+	justify-content: center;
+}
+
+ul{
+	list-style: none;
+}
+
+ul li{
+	float: left;
+	width: 150px;
+}
+
+ul .menu{
+	padding: 10px;
+	display: block;
+	background: #062C3C;
+	text-align: center;
+	color: white;
+	border-bottom: 4px solid #062C3C;
+}
+
+ul .menu:hover{
+	cursor: pointer;
+}
+
+.content{
+	display: none;
+	width: 450px;
+	height: 350px;
+	border: 2px dotted #cccccc;
+	margin-top: -7.5px;
+}
+
+	/* Esconde os Radio Buttons mas continuam podendo ser selecionados*/
+
+.radio{
+	visibility: hidden;
+}
+
+	/* Quando um Radio Button estiver selecionado, a borda do seu elemento irmao (li) indicado pelo operador '~', 
+	ficara laranja  */
+
+.radio:checked ~ .menu{
+	border-bottom: 4px solid #9E5B25;
+}
+
+
+	/* Quando um Radio Button estiver selecionado, a div seu elemento irmao (div) indicado pelo operador '~', 
+		aparecera */
+
+.radio:checked ~ div{
+	display: block;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Controle Finaceiro</title>
+
+			<!--- Tags Obrigatorias --->
+
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    		<!--- Bootstrap CSS --->
+
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    		<!--- Estilo customizado --->
+
+    	<link rel="stylesheet" type="text/css" href="estilo.css">
+
+    		<!--- Babel --->
+
+    	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+	</head>
+	<body onkeypress="handleKeyPress(event)">
+
+			<!--- Inicio da div principal --->
+
+		<div id="principal">
+			<nav>
+				<ul>
+					<li>
+						<input class="radio" type="radio" id="resumoRadio" checked name="menu">
+						<label class="menu" for="resumoRadio">Resumo</label>
+
+							<!--- Inicio do Conteudo da aba Resumo --->
+
+						<div class="content pt-3 pl-5">
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="nomeField">Nome:</label>
+									<input class="form-control" type="text" id="nomeField" placeholder="Digite seu nome" name="">	
+								</div>
+							</div>
+						
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="receitaField">Receita total:</label>
+									<input readonly="true" class="form-control" type="text" id="receitaField" placeholder="Receita Total" name="">	
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="gastosField">Gasto Total:</label>
+									<input readonly="true" class="form-control" type="text" id="gastosField" placeholder="Gasto Total" name="">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="liquidoField">Líquido:</label>
+									<input readonly="true" class="form-control" type="text" id="liquidoField" placeholder="Líquido" name="">	
+								</div>
+							</div>					
+						</div>
+
+							<!--- Fim do Conteudo da aba Resumo --->
+
+					</li>
+					<li>
+						<input class="radio" type="radio" id="receitaRadio" name="menu">
+						<label class="menu" for="receitaRadio">Receita</label>
+
+							<!--- Inicio do Conteudo da aba Receita --->
+
+						<div style="margin-left: -150px" class="content pt-3 pl-5">
+							
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="salarioField">Sálario:</label>
+									<input onfocus="handleOnFocus('salarioField')" onblur="handleOnBlur('salarioField')" class="form-control" type="text" id="salarioField" placeholder="Sálario" name="">	
+								</div>
+							</div>
+						
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="vendasField">Vendas:</label>
+									<input  onfocus="handleOnFocus('vendasField')" onblur="handleOnBlur('vendasField')" class="form-control" type="text" id="vendasField" placeholder="Vendas" name="">	
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="alugueisField">Aluguéis:</label>
+									<input  onfocus="handleOnFocus('alugueisField')" onblur="handleOnBlur('alugueisField')" class="form-control" type="text" id="alugueisField" placeholder="Aluguéis" name="">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="outrosReceitaField">Outros:</label>
+									<input  onfocus="handleOnFocus('outrosReceitaField')" onblur="handleOnBlur('outrosReceitaField')" class="form-control" type="text" id="outrosReceitaField" placeholder="Outros" name="">	
+								</div>
+							</div>
+
+						</div>
+
+							<!--- Fim do Conteudo da aba Receita --->
+
+					</li>
+					<li>
+						<input class="radio" type="radio" id="gastosRadio" name="menu">
+						<label class="menu" for="gastosRadio">Gastos</label>
+
+							<!--- Inicio do Conteudo da aba Gastos --->
+
+						<div style="margin-left: -300px;" class="content pl-5 pt-3">
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="alimentacaoField">Alimentação:</label>
+									<input  onfocus="handleOnFocus('alimentacaoField')" onblur="handleOnBlur('alimentacaoField')" class="form-control" type="text" id="alimentacaoField" placeholder="Alimentação" name="">	
+								</div>
+							</div>
+						
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="moradiaField">Moradia:</label>
+									<input  onfocus="handleOnFocus('moradiaField')" onblur="handleOnBlur('moradiaField')" class="form-control" type="text" id="moradiaField" placeholder="Moradia" name="">	
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="transporteField">Transporte:</label>
+									<input  onfocus="handleOnFocus('transporteField')" onblur="handleOnBlur('transporteField')" class="form-control" type="text" id="transporteField" placeholder="Transporte" name="">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="saudeField">Saúde:</label>
+									<input  onfocus="handleOnFocus('saudeField')" onblur="handleOnBlur('saudeField')" class="form-control" type="text" id="saudeField" placeholder="Saúde" name="">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="educacaoField">Educação:</label>
+									<input  onfocus="handleOnFocus('educacaoField')" onblur="handleOnBlur('educacaoField')" class="form-control" type="text" id="educacaoField" placeholder="Educação" name="">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<div class="col-12 form-inline">
+									<label class="mr-2" for="outrosGastosField">Outros:</label>
+									<input  onfocus="handleOnFocus('outrosGastosField')" onblur="handleOnBlur('outrosGastosField')" class="form-control" type="text" id="outrosGastosField" placeholder="Outros" name="">	
+								</div>
+							</div>
+						</div>
+
+							<!--- Fim do Conteudo da aba Gastos --->
+
+					</li>
+				</ul>
+			</nav>
+			<div class="d-flex justify-content-center mt-4">
+				<input onclick="processar()" type="submit" value="Processar" class="btn btn-lg btn-success"></button>	
+			</div>
+
+				<!--- Fim da div Principal --->
+			
+		</div>
+
+		<script type="text/javascript" src="script.js"></script>
+
+	</body>
+</html>
